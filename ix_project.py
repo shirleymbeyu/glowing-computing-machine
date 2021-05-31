@@ -130,7 +130,20 @@ for col in all_data.columns:
 #Confirming the effect:
 all_data.info()
 
+# Separate the cleaned train and test data from the combined dataframe.
+c_tr = all_data[:ntr]
+c_ts = all_data[ntr:]
 
+# Check the shapes of the split dataset
+c_tr.shape, c_ts.shape
+
+c_tr.head()
+
+c_ts.head()
+
+#LOADING THEM INTO NEW CSV FILES FOR THE ANALYSIS PROCESS:
+c_tr.to_csv('cleantr.csv', index = False)
+c_ts.to_csv('cleantn.csv', index = False)
 
 """# Data Preparation"""
 
